@@ -1,0 +1,31 @@
+server {
+    listen 80 default_server;
+
+    root        /usr/src/app/src;
+    index       index.php;
+
+    access_log  /var/log/app/access.log;
+    error_log   /var/log/app/error.log;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.(js|css|png|jpg|swf|ico|pdf|mov|fla|zip|rar)$ {
+        try_files $uri =404;
+	    expires      30d;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_read_timeout 600;
+    }
+
+    location ~ /\.(ht|svn|git) {
+        deny all;
+    }
+
+    gzip on;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript;
+}

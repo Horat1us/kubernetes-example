@@ -1,0 +1,16 @@
+{
+    "name": "horat1us/kubernetes-example",
+    "description": "Some shit to get Kubernetes wotk",
+    "type": "library",
+    "require": {
+        "fzaninotto/faker": "^1.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Letnikow",
+            "email": "reclamme@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
