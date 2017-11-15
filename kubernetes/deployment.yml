@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: web
-          image: gcr.io/cashme-186014/kubernetes-example:1.0
+          image: gcr.io/cashme-186014/kubernetes-example:1.1
           ports:
             - containerPort: 80
