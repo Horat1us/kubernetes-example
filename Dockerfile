@@ -19,5 +19,6 @@ RUN composer install
 COPY . /usr/src/app
 
 COPY nginx/production.nginx /etc/nginx/sites-enabled/default
+COPY ./nginx/start.sh /usr/src/app
 
-CMD service php7.0-fpm start && nginx -g daemon off;
+CMD /usr/src/app/start.sh

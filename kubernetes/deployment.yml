@@ -19,4 +19,3 @@ spec:
           image: gcr.io/cashme-186014/kubernetes-example:1.0
           ports:
             - containerPort: 80
-        - name:
